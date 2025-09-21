@@ -9,7 +9,9 @@ MSJ DB "ARQUITECTURA DE COMPUTADORAS-"
 FIN DB ?
 ORG 2000H
 MOV BX, OFFSET MSJ
-MOV AL, OFFSET FIN - OFFSET MSJ
+;MOV AL, OFFSET FIN - OFFSET MSJ
+;INCISO D) SUB AL, 4
+MOV AL, 1; INCISO E
 INT 7
 INT 0
 END
@@ -19,3 +21,5 @@ END
 ;PORQUE ESOS VALORES HEXADECIMALES REFERENCIAN CADA CARACTER EN FORMATO ASCII
 ;c) Con referencia a la interrupción INT 7, ¿qué se almacena en los registros BX y AL?
 ;En BX se almacena la dirección desde donde empezara a imprimir y en AL la cantidad de caracteres que se imprimirá por pantalla.
+;d) Modifique el programa para que solo imprima la primera parte del mensaje: “ARQUITECTURA DE COMPUTADORAS-”
+;e)Modifique el programa para que solo imprima la primera letra, es decir, la “A”
